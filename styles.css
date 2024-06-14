@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.row {
+    height: 50px;
+    width: 50px;
+    border: 10px solid blue;
+}
