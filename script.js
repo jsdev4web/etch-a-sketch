@@ -1,6 +1,11 @@
 let mainDiv = document.querySelector(".main");
 console.log(mainDiv);
 
+let addSquares = document.createElement("button");
+addSquares.setAttribute("class", "addSquares");
+document.body.insertBefore(addSquares, mainDiv)
+addSquares.innerText = "Add Squares"
+
 
 function makeRows(rowNum){
     rowNum = rowNum * rowNum
@@ -41,5 +46,47 @@ square.forEach((cell) => {
         console.log(e)
         e.target.style.backgroundColor = skittles()
         e.target.style.transition = "ease 1s all"
+    })
+})
+
+
+let newSquares;
+
+addSquares.addEventListener("click", function() {
+
+    let moreSquares = prompt("What is the new number squared?")
+    
+    if (moreSquares <= 100){
+        
+
+    } else {
+    alert("Too high of a number")
+    };
+
+
+    let main = document.querySelector(".main");
+    let html = "";
+    main.innerText += html;
+
+    console.log(moreSquares)
+
+    makeRows(moreSquares)
+
+    let cell = document.querySelectorAll(".row");
+
+    console.log(cell)
+
+    cell.forEach((square) => {
+        square.addEventListener("mouseover", function(e) {
+            console.log(e)
+            e.target.style.backgroundColor = skittles()
+            e.target.style.animation = "mymove 4s 5"
+            e.target.style.position = "relative"
+            e.target.style.transformOrigin = "right bottom"
+            e.target.style.transform = "scale(1.2)"
+            e.target.style.transition = "background-color 1.5s";
+            e.target.style.filter = "brightness(50%)"
+        })
+
     })
 })
